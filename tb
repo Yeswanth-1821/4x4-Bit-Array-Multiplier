@@ -1,0 +1,15 @@
+module tb_array_multiplier;
+    reg [3:0] a, b;
+    wire [7:0] product;
+
+    array_multiplier dut(a, b, product);
+
+    initial begin
+        $dumpfile("array_multiplier.vcd");
+        $dumpvars(0, tb_array_multiplier);
+        a = 4; b = 3; #10;
+        a = 9; b = 5; #10;
+        a = 15; b = 15; #10;
+        $finish;
+    end
+endmodule
